@@ -4,18 +4,17 @@ import org.junit.Test;
 
 public class CalculatorTest {
     Calculator calc = new Calculator();
-    int num1 = 20;
-    int num2 = 30;
+
     @Test
     public void addTest(){
-        int expectedResults = 50;
-        int results = calc.add(num1,num2);
+        int expectedResults = calc.add(1,3);
+        int results = 4;
         Assert.assertEquals(expectedResults,results);
     }
     @Test
     public void multiplyTest(){
-        int expectedResults = 600;
-        int results = calc.multiply(num1,num2);
+        int expectedResults = calc.multiply(1,2,3,4,5);
+        int results = 120;
         Assert.assertEquals(expectedResults,results);
     }
 

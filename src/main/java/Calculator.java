@@ -2,20 +2,35 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    public static int add(int num1, int num2)
+    public static int add(int... numbers)
     {
-        int sum = num1+num2;
+        int sum = 0;
+
+        for(int x = 0; x < numbers.length; x ++)
+        {
+            sum = sum + numbers[x];
+        }
+        System.out.println("The sum of numbers : " + sum);
         return sum;
     }
-    public static int multiply(int num1,int num2)
+
+    public static int multiply(int... numbers)
     {
-        int product = num1*num2;
+        int product = numbers[0];
+
+        for(int x = 1; x < numbers.length; x++)
+        {
+            product = product * numbers[x];
+
+        }
+
+        System.out.println("Product of numbers : " + product);
+
         return product;
     }
 
     public static void main(String[]args) {
-        int num1 = 20;
-        int num2 = 30;
+
 
         int choice = 0;
         char repeat = 0;
@@ -37,14 +52,15 @@ public class Calculator {
             switch (choice) {
 
                 case 1:
-
-                    System.out.println("The sum of 2 numbers :"+add(num1,num2));
+                    add(1,2,3,4,5);
+                    add(1,2);
+                    add(-1,-1);
 
                     break;
                 case 2:
-
-
-                    System.out.println("The product of 2 numbers : " +multiply(num1,num2));
+                    multiply(1,2,3,4,5);
+                    multiply(1,3);
+                    multiply(-1,3);
                     break;
 
                 default:
